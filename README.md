@@ -37,7 +37,7 @@ The UI will run at `http://localhost:3000`
 We welcome contributions for the **Nexus Spring of Code (NSoC) 2026**! 
 Please check out our [Issues](https://github.com/vanshi18s/End-to-End-Deepfake-Voice-Analysis-and-Fraud-Prevention-Framework/issues) tab for tasks labeled `good first issue`. 
 
-Before submitting a Pull Request, please read our `CONTRIBUTING.md` (coming soon).
+Before submitting a Pull Request, please read our `CONTRIBUTING.md` (Now Available).
 
 ## 📄 License
 This project is licensed under the MIT License.

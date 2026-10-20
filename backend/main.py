@@ -1,10 +1,22 @@
 from pathlib import Path
 import json
+import os
 
 from fastapi import FastAPI, File, HTTPException, UploadFile
-from starlette.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Deepfake Audio Detection API")
+
+frontend_origin = os.getenv("FRONTEND_ORIGIN")
+allowed_origins = ["http://localhost:3000", "http://127.0.0.1:3000"]
+if frontend_origin:
+    allowed_origins.append(frontend_origin.rstrip("/"))
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=allowed_origins,
+    allow_methods=["POST", "OPTIONS"],
+    allow_headers=["*"],
+)
 
 SUPPORTED_EXTENSIONS = {".wav", ".wave"}
 MAX_UPLOAD_SIZE = 25 * 1024 * 1024

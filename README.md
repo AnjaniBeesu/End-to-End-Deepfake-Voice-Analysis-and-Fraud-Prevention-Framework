@@ -44,4 +44,4 @@ We welcome contributions for the **Nexus Spring of Code (NSoC) 2026**!
 3. Read our [CONTRIBUTING.md](./CONTRIBUTING.md) guide before opening a Pull Request.
 
 ## 📄 License
-This project is licensed under the MIT License.
+This project is licensed under the Apache License 2.0. See the [LICENSE](./LICENSE) file for details.

@@ -34,10 +34,14 @@ npm run dev
 The UI will run at `http://localhost:3000`
 
 ## 🤝 Contributing
+## 🤝 Contributing
 We welcome contributions for the **Nexus Spring of Code (NSoC) 2026**! 
-Please check out our [Issues](https://github.com/vanshi18s/End-to-End-Deepfake-Voice-Analysis-and-Fraud-Prevention-Framework/issues) tab for tasks labeled `good first issue`. 
 
-Before submitting a Pull Request, please read our `CONTRIBUTING.md` (coming soon).
+> ⚠️ **Important NSoC 2026 Rule:** Do **NOT** submit a Pull Request without first creating or claiming an Issue and waiting to be officially assigned by `@vanshi18s`. Unassigned PRs will be closed per official NSoC guidelines.
+
+1. Browse open tasks in the **Issues** tab or propose a new valid issue.
+2. Comment on the issue to request assignment and wait for confirmation.
+3. Read our [CONTRIBUTING.md](./CONTRIBUTING.md) guide before opening a Pull Request.
 
 ## 📄 License
 This project is licensed under the MIT License.

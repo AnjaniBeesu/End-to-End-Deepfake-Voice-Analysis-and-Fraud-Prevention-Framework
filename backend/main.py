@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from starlette.responses import JSONResponse
@@ -68,20 +69,16 @@ class UploadSizeLimitMiddleware:
 
     @staticmethod
     async def _respond(send, status_code: int, detail: str):
-        response = JSONResponse(status_code=status_code, content={"detail": detail})
-        await response(
-            {"type": "http", "asgi": {"version": "3.0", "spec_version": "2.3"},
-             "method": "POST", "path": "/api/v1/analyze", "raw_path": b"/api/v1/analyze",
-             "query_string": b"", "headers": [], "client": None, "server": None,
-             "scheme": "http", "http_version": "1.1"},
-            _empty_receive,
-            send,
-        )
-
-
-async def _empty_receive():
-    return {"type": "http.request", "body": b"", "more_body": False}
-
+        body = json.dumps({"detail": detail}).encode("utf-8")
+        await send({
+            "type": "http.response.start",
+            "status": status_code,
+            "headers": [
+                (b"content-type", b"application/json"),
+                (b"content-length", str(len(body)).encode("ascii")),
+            ],
+        })
+        await send({"type": "http.response.body", "body": body})
 
 class _UploadTooLarge(Exception):
     """Internal signal used to stop reading an oversized request."""
